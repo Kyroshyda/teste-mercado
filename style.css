@@ -1,0 +1,304 @@
+/* PALETA DE CORES: */
+/* -- Vermelho Principal: #E50020 */
+/* -- Fundo/Base: #FFFFFF (Branco) */
+/* -- Texto/Destaques Escuros: #333333 (Preto Quase Total) */
+/* -- Fundo Secundário: #F8F8F8 (Cinza Claro) */
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F8F8F8; 
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ------------------- CABEÇALHO (HEADER) ------------------- */
+.header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* LOGO: ESTILOS PARA IMAGEM */
+.logo img {
+    height: 50px; /* Altura da logo no desktop */
+    width: auto;
+    display: block;
+}
+
+/* MENU DE NAVEGAÇÃO (DESKTOP) */
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-list a {
+    font-size: 16px;
+    color: #555555;
+    transition: color 0.3s;
+    padding: 5px 0;
+}
+
+.nav-list a:hover {
+    color: #E50020; /* Vermelho ao passar o mouse */
+}
+
+.menu-toggle {
+    display: none; /* Escondido no desktop */
+}
+
+
+/* ------------------- BANNER PRINCIPAL (HERO) - CÓDIGO CORRIGIDO DEFINITIVAMENTE ------------------- */
+.hero-banner {
+    /* CORREÇÃO: Usa o nome simplificado 'banner.jpg' */
+    background: 
+        /* 1. Overlay (efeito esbranquiçado): Degradê branco/transparente */
+        linear-gradient(
+            to bottom, 
+            rgba(255, 255, 255, 0.4), 
+            rgba(255, 255, 255, 0.7)  
+        ),
+        /* 2. Imagem de fundo: REFERÊNCIA AO NOME SIMPLIFICADO */
+        url('./banner.jpg');
+    
+    background-size: cover; 
+    background-position: center center; 
+    
+    color: white; 
+    padding: 80px 0;
+    text-align: center;
+    position: relative; 
+}
+
+/* Estilos de texto com sombra para garantir a legibilidade */
+.hero-content h1 {
+    font-size: 44px;
+    margin-bottom: 10px;
+    /* Sombra escura para o texto branco aparecer em fundo claro */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+}
+
+.hero-content .highlight {
+    color: #E50020; /* Destaque em VERMELHO para contraste */
+    font-weight: bold;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos dos BOTÕES ATUALIZADOS para terem MAIOR CONTRASTE no novo fundo */
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background-color: #E50020; /* Vermelho forte para alto contraste */
+    color: #FFFFFF; 
+    border: 2px solid #E50020;
+}
+
+.btn-primary:hover {
+    background-color: #B30018; /* Vermelho mais escuro no hover */
+}
+
+.btn-secondary {
+    background-color: #333333; /* Preto para alto contraste */
+    color: white;
+    border: 2px solid #333333;
+}
+
+.btn-secondary:hover {
+    background-color: #555555;
+}
+
+/* ------------------- SEÇÃO: POR QUE ESCOLHER? ------------------- */
+.why-choose-us {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 32px;
+    color: #E50020;
+    margin-bottom: 10px;
+}
+
+.why-choose-us .subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666666;
+}
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.reason-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid #E50020; /* Borda Vermelha */
+}
+
+.reason-card i {
+    font-size: 36px;
+    color: #E50020;
+    margin-bottom: 15px;
+}
+
+.reason-card h3 {
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.reason-card p {
+    color: #777777;
+}
+
+
+/* ------------------- RODAPÉ (FOOTER) ------------------- */
+.footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.social-links a {
+    font-size: 20px;
+    margin-left: 15px;
+    color: white;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #E50020;
+}
+
+
+/* ------------------- MEDIA QUERIES (ADAPTAÇÃO MOBILE/ANDROID) ------------------- */
+
+@media (max-width: 768px) {
+    /* CABEÇALHO E MENU MOBILE */
+    .header-content {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        height: 40px; 
+    }
+
+    .menu-toggle {
+        display: block; 
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #E50020; 
+    }
+    
+    .main-nav {
+        position: relative;
+    }
+
+    .nav-list {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #FFFFFF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        z-index: 900;
+        border: 1px solid #E50020;
+    }
+
+    .nav-list.active {
+        display: flex; 
+    }
+
+    .nav-list a {
+        padding: 15px 20px;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #F8F8F8;
+        color: #333333;
+    }
+    
+    /* BANNER PRINCIPAL MOBILE */
+    .hero-banner {
+        padding: 60px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* RODAPÉ MOBILE */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-content p {
+        margin-bottom: 15px;
+    }
+}
