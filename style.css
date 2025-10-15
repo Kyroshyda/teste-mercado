@@ -1,8 +1,9 @@
 /* PALETA DE CORES: */
 /* -- Vermelho Principal: #E50020 */
+/* -- Vermelho Escuro: #B30018 */
 /* -- Fundo/Base: #FFFFFF (Branco) */
-/* -- Texto/Destaques Escuros: #333333 (Preto Quase Total) */
-/* -- Fundo Secundário: #F8F8F8 (Cinza Claro) */
+/* -- Fundo Secundário 3D: #F0F0F0 (Cinza Claro para Neumorfismo) */
+/* -- Texto/Destaques Escuros: #333333 */
 
 /* RESET BÁSICO */
 * {
@@ -13,7 +14,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #F8F8F8; 
+    /* Fundo que suporta o efeito 3D (Neumorfismo) */
+    background-color: #F0F0F0; 
     color: #333333;
 }
 
@@ -31,7 +33,7 @@ a {
 /* ------------------- CABEÇALHO (HEADER) ------------------- */
 .header {
     background-color: #FFFFFF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05); 
     position: sticky; 
     top: 0;
     z-index: 1000;
@@ -44,14 +46,26 @@ a {
     padding: 15px 0;
 }
 
-/* LOGO: ESTILOS PARA IMAGEM */
+/* LOGO: ESTILOS PARA IMAGEM E TEXTO */
+.logo {
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+
 .logo img {
-    height: 50px; /* Altura da logo no desktop */
+    height: 50px; 
     width: auto;
     display: block;
 }
 
-/* MENU DE NAVEGAÇÃO (DESKTOP) */
+.logo-text {
+    font-size: 24px; 
+    font-weight: bold;
+    color: #E50020; 
+}
+
+/* MENU DE NAVEGAÇÃO */
 .nav-list {
     display: flex;
     list-style: none;
@@ -66,23 +80,23 @@ a {
 }
 
 .nav-list a:hover {
-    color: #E50020; /* Vermelho ao passar o mouse */
+    color: #E50020; 
 }
 
 .menu-toggle {
-    display: none; /* Escondido no desktop */
+    display: none; 
 }
 
 
-/* ------------------- BANNER PRINCIPAL (HERO) - CÓDIGO CORRIGIDO DEFINITIVAMENTE ------------------- */
+/* ------------------- BANNER PRINCIPAL (HERO) - LEGIBILIDADE AUMENTADA ------------------- */
 .hero-banner {
-    /* CORREÇÃO: Usa o nome simplificado 'banner.jpg' */
+    /* CORREÇÃO DEFINITIVA: Usando o nome SIMPLIFICADO: banner.jpg */
     background: 
-        /* 1. Overlay (efeito esbranquiçado): Degradê branco/transparente */
+        /* 1. Overlay (efeito esbranquiçado) */
         linear-gradient(
             to bottom, 
-            rgba(255, 255, 255, 0.4), 
-            rgba(255, 255, 255, 0.7)  
+            rgba(255, 255, 255, 0.3), 
+            rgba(255, 255, 255, 0.6)  
         ),
         /* 2. Imagem de fundo: REFERÊNCIA AO NOME SIMPLIFICADO */
         url('./banner.jpg');
@@ -94,25 +108,30 @@ a {
     padding: 80px 0;
     text-align: center;
     position: relative; 
+    border-bottom: 4px solid #E50020; 
 }
 
-/* Estilos de texto com sombra para garantir a legibilidade */
+/* Estilos de texto com sombra FORTE para garantir a legibilidade */
 .hero-content h1 {
     font-size: 44px;
     margin-bottom: 10px;
-    /* Sombra escura para o texto branco aparecer em fundo claro */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+    /* Aumenta a sombra do texto para destaque máximo */
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 2px rgba(0, 0, 0, 0.6); 
 }
 
 .hero-content p {
     font-size: 18px;
     margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+    /* Aumenta a sombra do texto secundário */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 1px rgba(0, 0, 0, 0.7); 
 }
 
 .hero-content .highlight {
-    color: #E50020; /* Destaque em VERMELHO para contraste */
+    /* Cor mais escura no destaque para contraste */
+    color: #B30018; 
     font-weight: bold;
+    /* Ajusta a sombra para não "borrar" */
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.9);
 }
 
 .hero-actions {
@@ -121,39 +140,53 @@ a {
     gap: 20px;
 }
 
-/* Estilos dos BOTÕES ATUALIZADOS para terem MAIOR CONTRASTE no novo fundo */
+/* ------------------- ESTILOS DOS BOTÕES GERAIS (3D) ------------------- */
 .btn {
     padding: 12px 25px;
-    border-radius: 5px;
+    border-radius: 50px; /* Mais arredondado para o estilo 3D */
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra externa */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); /* Sombra no texto */
 }
 
+/* BOTÃO PRIMÁRIO - VERMELHO (3D) */
 .btn-primary {
-    background-color: #E50020; /* Vermelho forte para alto contraste */
+    background: linear-gradient(145deg, #E50020, #B30018); /* Gradiente para profundidade */
     color: #FFFFFF; 
-    border: 2px solid #E50020;
+    border: none;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), inset 1px 1px 3px rgba(255, 255, 255, 0.3); /* Sombra interna e externa */
 }
 
 .btn-primary:hover {
-    background-color: #B30018; /* Vermelho mais escuro no hover */
+    background: linear-gradient(145deg, #B30018, #E50020);
+    /* Efeito de "pressionar" */
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3); 
+    transform: translateY(1px);
 }
 
+/* BOTÃO SECUNDÁRIO (BANNER HERO) - CINZA ESCURO (3D) */
 .btn-secondary {
-    background-color: #333333; /* Preto para alto contraste */
+    background: linear-gradient(145deg, #444444, #222222);
     color: white;
-    border: 2px solid #333333;
+    border: none;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2), inset 1px 1px 3px rgba(255, 255, 255, 0.1); 
 }
 
 .btn-secondary:hover {
-    background-color: #555555;
+    background: linear-gradient(145deg, #222222, #444444);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), inset 3px 3px 5px rgba(0, 0, 0, 0.3); 
+    transform: translateY(1px);
 }
 
-/* ------------------- SEÇÃO: POR QUE ESCOLHER? ------------------- */
+
+/* ------------------- SEÇÃO 1: POR QUE ESCOLHER? (3D/Neumorfismo) ------------------- */
 .why-choose-us {
+    background-color: #F0F0F0; 
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -161,14 +194,8 @@ a {
 
 .why-choose-us h2 {
     font-size: 32px;
-    color: #E50020;
+    color: #333333; 
     margin-bottom: 10px;
-}
-
-.why-choose-us .subtitle {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #666666;
 }
 
 .reason-grid {
@@ -178,26 +205,181 @@ a {
 }
 
 .reason-card {
-    background-color: white;
+    background-color: #F0F0F0;
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-top: 5px solid #E50020; /* Borda Vermelha */
+    border-radius: 20px; 
+    /* Estilo Neumórfico (3D) */
+    box-shadow: 
+        5px 5px 10px rgba(0, 0, 0, 0.1),
+        -5px -5px 10px #FFFFFF;
+    transition: box-shadow 0.3s;
+}
+
+.reason-card:hover {
+    /* Efeito de "depressão" ao passar o mouse */
+    box-shadow: 
+        inset 5px 5px 10px rgba(0, 0, 0, 0.1),
+        inset -5px -5px 10px #FFFFFF;
 }
 
 .reason-card i {
     font-size: 36px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); 
     color: #E50020;
     margin-bottom: 15px;
 }
 
-.reason-card h3 {
-    margin-bottom: 10px;
-    color: #333333;
+
+/* ------------------- SEÇÃO 2: MISSÃO, VISÃO E VALORES (3D Sutil) ------------------- */
+.mission-vision {
+    background-color: #FFFFFF; 
+    padding: 60px 0;
+    text-align: center;
 }
 
-.reason-card p {
-    color: #777777;
+.mission-vision h2 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.mvv-item {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+    border-left: 5px solid #E50020; 
+    transition: transform 0.3s;
+}
+
+.mvv-item:hover {
+    transform: translateY(-5px); /* Efeito flutuante */
+}
+
+.mvv-item i {
+    font-size: 30px;
+    color: #E50020;
+    margin-bottom: 10px;
+}
+
+/* ------------------- NOVA SEÇÃO: MÍDIAS SOCIAIS (3D/Neumorfismo) ------------------- */
+.social-media-links {
+    background-color: #F0F0F0; /* Fundo que combina com o estilo 3D */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.social-media-links h2 {
+    font-size: 30px;
+    color: #333333;
+    margin-bottom: 40px;
+}
+
+.social-icon-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os ícones */
+}
+
+.social-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Torna o botão redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    
+    /* Estilo Base 3D (Neumorfismo) */
+    background-color: #F0F0F0;
+    box-shadow: 
+        8px 8px 16px rgba(0, 0, 0, 0.1),
+        -8px -8px 16px #FFFFFF;
+}
+
+/* Efeito de "Pressionar" (3D) ao passar o mouse */
+.social-icon:hover {
+    transform: translateY(1px) scale(0.98); /* Mínima depressão */
+    /* Sombra interna para simular o ícone afundando */
+    box-shadow: 
+        inset 4px 4px 8px rgba(0, 0, 0, 0.15),
+        inset -4px -4px 8px #FFFFFF;
+    cursor: pointer;
+}
+
+/* Cores dos Ícones */
+.social-icon i {
+    transition: color 0.3s ease;
+}
+
+/* Facebook (Cor Pierim/Vermelho no hover) */
+.social-icon.facebook {
+    color: #4267B2; /* Cor padrão do Facebook */
+}
+.social-icon.facebook:hover i {
+    color: #E50020;
+}
+
+/* Instagram (Cor Pierim/Vermelho no hover) */
+.social-icon.instagram {
+    color: #C13584; /* Cor padrão do Instagram */
+}
+.social-icon.instagram:hover i {
+    color: #E50020;
+}
+
+/* WhatsApp (Cor Pierim/Vermelho no hover) */
+.social-icon.whatsapp {
+    color: #25D366; /* Cor padrão do WhatsApp */
+}
+.social-icon.whatsapp:hover i {
+    color: #E50020;
+}
+/* ------------------- FIM DA NOVA SEÇÃO ------------------- */
+
+/* ------------------- SEÇÃO 3: TRABALHE CONOSCO ------------------- */
+.join-us-banner {
+    /* Banner Vermelho Forte Mantido para Contraste */
+    background-color: #E50020; 
+    color: #FFFFFF;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.join-us-content h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.join-us-content p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+/* ESTILOS INTERATIVOS DO BOTÃO TRABALHE CONOSCO (3D) */
+.join-us-content .btn-secondary {
+    /* O estilo 3D já está no .btn, ajustamos apenas as cores */
+    background: linear-gradient(145deg, #FFFFFF, #E0E0E0); /* Gradiente branco/cinza */
+    color: #E50020; /* Texto Vermelho */
+    border: none; 
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.5); 
+}
+
+.join-us-content .btn-secondary:hover {
+    /* Efeito de "pressionar" */
+    background: linear-gradient(145deg, #E0E0E0, #FFFFFF);
+    color: #B30018; 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3), inset 4px 4px 8px rgba(0, 0, 0, 0.1); 
+    transform: scale(0.98); /* Diminui ligeiramente */
 }
 
 
@@ -238,6 +420,10 @@ a {
 
     .logo img {
         height: 40px; 
+    }
+    
+    .logo-text {
+        font-size: 20px;
     }
 
     .menu-toggle {
@@ -292,6 +478,16 @@ a {
         gap: 15px;
     }
     
+    /* MÍDIAS SOCIAIS MOBILE */
+    .social-icon-grid {
+        gap: 20px;
+    }
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
     /* RODAPÉ MOBILE */
     .footer-content {
         flex-direction: column;
